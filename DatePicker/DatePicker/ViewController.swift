@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var strChangeDate: String = ""
     var strUpdateTime: String = ""
     var count = 0
-    
+    var status = false //알람 한번만 띄우게
     
     let interval = 1.0 // 1초
     let timeSelecter: Selector = #selector(ViewController.updateTime)
@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd EEE a hh:mm" //24시간 HH, 12시간 hh
         lblPickerTime.text = "선택시간 : \(formatter.string(from: datePickerView.date))"
         strChangeDate = formatter.string(from: datePickerView.date)
+        status = true
     }
     
     // Asysctype
@@ -51,12 +52,24 @@ class ViewController: UIViewController {
         strUpdateTime = formatter.string(from: date as Date)
         
         if strUpdateTime == strChangeDate {
+            if status{
+                let lampOnAlert = UIAlertController(title: "알림", message: "설정된 시간입니다 !!!", preferredStyle: .alert)
+                let onAction = UIAlertAction(title: "네, 알겠습니다.", style: .default, handler: {ACTION in
+                    self.status = false
+                })
+                
+                lampOnAlert.addAction(onAction)
+                present(lampOnAlert, animated: true, completion: nil)
+                
+            }
+            
             if count % 2 == 0 {
                 view.backgroundColor = UIColor.red
             }else{
                 view.backgroundColor = UIColor.blue
             }
             count += 1
+            
         }else{
             count = 0
             view.backgroundColor = UIColor.white
