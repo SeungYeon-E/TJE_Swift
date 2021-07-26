@@ -7,8 +7,14 @@
 
 import UIKit
 
+// 변수 선언을 Class 정의 전에 한다. 여기에 변수 선언을 하게 되면 프로젝트가 관리해 주는 변수
+var items = ["책 구매", "철수와 약속", "스터디 준비하기"]
+var itemsImageFile = ["cart.png", "clock.png", "pencil.png"]
+
 class TableViewController: UITableViewController {
 
+    @IBOutlet var tvListView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,29 +23,42 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Edit버튼을 만들고 삭제 기능 추가하기, 왼쪽으로 배치
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
+    }
+    
+    // 화면 뜬 후 : 화면이 뒤에 숨었다가 동작할때 실행되는것!!!!!, viewDidLoad 실행 후 진행
+    override func viewWillAppear(_ animated: Bool) {
+        // 테이블 관련된거 다시 실행해 화면 재구성! 데이터베이스재구성 아님!!
+        tvListView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
+    // Section당 열의 갯수
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    // 셀의 구성
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myTable", for: indexPath)
 
         // Configure the cell...
+        cell.textLabel?.text = items[indexPath.row]
+        cell.imageView?.image = UIImage(named: itemsImageFile[indexPath.row])
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,17 +68,18 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    // Table 셀 삭제
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            items.remove(at: indexPath.row)
+            itemsImageFile.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -76,14 +96,21 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "sgDetail"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.tvListView.indexPath(for: cell)
+            
+            let detailView = segue.destination as! DetailViewController
+            detailView.receiveItems(items[indexPath!.row], itemsImageFile[indexPath!.row])
+        }
     }
-    */
+    
 
 }

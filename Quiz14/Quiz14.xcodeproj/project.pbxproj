@@ -13,6 +13,9 @@
 		373E7C6026A918C7003BCA2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C5E26A918C7003BCA2C /* Main.storyboard */; };
 		373E7C6226A918C7003BCA2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C6126A918C7003BCA2C /* Assets.xcassets */; };
 		373E7C6526A918C7003BCA2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C6326A918C7003BCA2C /* LaunchScreen.storyboard */; };
+		373E7C6D26A91AE2003BCA2C /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E7C6C26A91AE2003BCA2C /* ButtonViewController.swift */; };
+		373E7C7026A91B01003BCA2C /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E7C6E26A91B01003BCA2C /* TimerViewController.swift */; };
+		373E7C7126A91B01003BCA2C /* PageControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E7C6F26A91B01003BCA2C /* PageControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		373E7C6126A918C7003BCA2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373E7C6426A918C7003BCA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		373E7C6626A918C7003BCA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373E7C6C26A91AE2003BCA2C /* ButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		373E7C6E26A91B01003BCA2C /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		373E7C6F26A91B01003BCA2C /* PageControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				373E7C5826A918C7003BCA2C /* AppDelegate.swift */,
 				373E7C5A26A918C7003BCA2C /* SceneDelegate.swift */,
 				373E7C5C26A918C7003BCA2C /* ViewController.swift */,
+				373E7C6F26A91B01003BCA2C /* PageControllerViewController.swift */,
+				373E7C6E26A91B01003BCA2C /* TimerViewController.swift */,
+				373E7C6C26A91AE2003BCA2C /* ButtonViewController.swift */,
 				373E7C5E26A918C7003BCA2C /* Main.storyboard */,
 				373E7C6126A918C7003BCA2C /* Assets.xcassets */,
 				373E7C6326A918C7003BCA2C /* LaunchScreen.storyboard */,
@@ -137,6 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373E7C7026A91B01003BCA2C /* TimerViewController.swift in Sources */,
+				373E7C7126A91B01003BCA2C /* PageControllerViewController.swift in Sources */,
+				373E7C6D26A91AE2003BCA2C /* ButtonViewController.swift in Sources */,
 				373E7C5D26A918C7003BCA2C /* ViewController.swift in Sources */,
 				373E7C5926A918C7003BCA2C /* AppDelegate.swift in Sources */,
 				373E7C5B26A918C7003BCA2C /* SceneDelegate.swift in Sources */,

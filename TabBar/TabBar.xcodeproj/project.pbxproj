@@ -13,6 +13,8 @@
 		373E7C3C26A90C9B003BCA2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C3A26A90C9B003BCA2C /* Main.storyboard */; };
 		373E7C3E26A90C9C003BCA2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C3D26A90C9C003BCA2C /* Assets.xcassets */; };
 		373E7C4126A90C9C003BCA2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373E7C3F26A90C9C003BCA2C /* LaunchScreen.storyboard */; };
+		373E7C4926A9119D003BCA2C /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E7C4826A9119D003BCA2C /* ImageViewController.swift */; };
+		373E7C4B26A91206003BCA2C /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373E7C4A26A91206003BCA2C /* DateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		373E7C3D26A90C9C003BCA2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		373E7C4026A90C9C003BCA2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		373E7C4226A90C9C003BCA2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		373E7C4826A9119D003BCA2C /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		373E7C4A26A91206003BCA2C /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				373E7C3626A90C9B003BCA2C /* SceneDelegate.swift */,
 				373E7C3826A90C9B003BCA2C /* ViewController.swift */,
 				373E7C3A26A90C9B003BCA2C /* Main.storyboard */,
+				373E7C4826A9119D003BCA2C /* ImageViewController.swift */,
+				373E7C4A26A91206003BCA2C /* DateViewController.swift */,
 				373E7C3D26A90C9C003BCA2C /* Assets.xcassets */,
 				373E7C3F26A90C9C003BCA2C /* LaunchScreen.storyboard */,
 				373E7C4226A90C9C003BCA2C /* Info.plist */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				373E7C4B26A91206003BCA2C /* DateViewController.swift in Sources */,
 				373E7C3926A90C9B003BCA2C /* ViewController.swift in Sources */,
 				373E7C3526A90C9B003BCA2C /* AppDelegate.swift in Sources */,
+				373E7C4926A9119D003BCA2C /* ImageViewController.swift in Sources */,
 				373E7C3726A90C9B003BCA2C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

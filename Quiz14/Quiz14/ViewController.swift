@@ -14,6 +14,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnButton(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 1
+    }
+    
+    @IBAction func btnTimer(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 2
+    }
+    
+    @IBAction func btnPageController(_ sender: UIButton) {
+        tabBarController?.selectedIndex = 3
+    }
+    
 }
 
