@@ -22,10 +22,10 @@ class UpdateModel{
         let defaultSesstion = URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSesstion.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to insert data")
+                print("Failed to update data")
                 result = false
             }else{
-                print("Data is inserted!")
+                print("Data is updated!")
                 result = true
             }
             

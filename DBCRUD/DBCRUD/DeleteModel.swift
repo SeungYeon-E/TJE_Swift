@@ -22,10 +22,10 @@ class DeleteModel{
         let defaultSesstion = URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSesstion.dataTask(with: url){(data, response, error) in
             if error != nil{
-                print("Failed to insert data")
+                print("Failed to delete data")
                 result = false
             }else{
-                print("Data is inserted!")
+                print("Data is deleted!")
                 result = true
             }
             

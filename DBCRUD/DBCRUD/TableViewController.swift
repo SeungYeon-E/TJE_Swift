@@ -27,6 +27,7 @@ class TableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let queryModel = QueryModel()
         queryModel.delegate = self
         queryModel.downloadItems()
@@ -66,17 +67,36 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+    // Table 셀 삭제
+        // Override to support editing the table view.
+        override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                
+                let item: DBModel = feedItem[indexPath.row] as! DBModel
+                
+                let deleteModel = DeleteModel()
+                let result = deleteModel.deleteItems(code: item.scode!)
+                
+                if result{
+                    let resultAlert = UIAlertController(title: "완료", message: "삭제가 되었습니다!", preferredStyle: .alert)
+                    let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    })
+                    resultAlert.addAction(onAction)
+                    present(resultAlert, animated: true, completion: nil)
+                }else{
+                    let resultAlert = UIAlertController(title: "실패", message: "에러가 발생 되었습니다!", preferredStyle: .alert)
+                    let onAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    resultAlert.addAction(onAction)
+                    present(resultAlert, animated: true, completion: nil)
+                }
+                
+                
+                
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+        }
 
     /*
     // Override to support rearranging the table view.
@@ -100,13 +120,16 @@ class TableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let cell = sender as! UITableViewCell
-        let indexPath = self.listTableView.indexPath(for: cell)
-        
-        let item: DBModel = feedItem[indexPath!.row] as! DBModel
-        
-        let detailView = segue.destination as! DetailViewController
-        detailView.receiveItems(item.scode!, item.sname!, item.sdept!, item.sphone!)
+        if segue.identifier == "sgDetail"{
+            let cell = sender as! UITableViewCell
+            let indexPath = self.listTableView.indexPath(for: cell)
+            
+            let item: DBModel = feedItem[indexPath!.row] as! DBModel
+            
+            let detailView = segue.destination as! DetailViewController
+                detailView.receiveItems(item.scode!, item.sname!, item.sdept!, item.sphone!)
+                
+        }
     }
 }
 
@@ -115,6 +138,4 @@ extension TableViewController: QueryModelProtocol{
         feedItem = items
         self.listTableView.reloadData()
     }
-    
-    
 }

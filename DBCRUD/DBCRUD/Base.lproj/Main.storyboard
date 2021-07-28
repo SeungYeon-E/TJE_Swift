@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eWJ-mq-THV" kind="show" id="Oxe-7Q-5Sp"/>
+                                    <segue destination="eWJ-mq-THV" kind="show" identifier="sgDetail" id="Oxe-7Q-5Sp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
