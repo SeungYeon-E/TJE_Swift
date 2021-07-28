@@ -80,6 +80,8 @@ class TableViewController: UITableViewController {
                 if result{
                     let resultAlert = UIAlertController(title: "완료", message: "삭제가 되었습니다!", preferredStyle: .alert)
                     let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
+                        let item: NSMutableArray = self.feedItem[indexPath.row] as! NSMutableArray
+                        item.removeAllObjects()
                         tableView.deleteRows(at: [indexPath], with: .fade)
                     })
                     resultAlert.addAction(onAction)
