@@ -67,6 +67,7 @@ class AddViewController: UIViewController {
             // 그냥 빠지는거야
             return
         }
+        
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting student: \(errmsg)")
