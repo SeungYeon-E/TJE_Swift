@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         // 파일 경로
         print(fileURL)
         
-        if sqlite3_open(fileURL.path, &db) == SQLITE_OK {
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("table not exsist")
         }
         
