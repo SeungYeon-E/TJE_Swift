@@ -9,7 +9,7 @@ import Foundation
 
 //class JsonModel:NSObject{
 class InsertModel{
-    var urlPath = "http://172.30.1.28:8080/ios/studentInsert_ios.jsp"
+    var urlPath = "http://192.168.2.9:8080/ios/studentInsert_ios.jsp"
     
     func insertItems(code: String, name: String, dept: String, phone: String) -> Bool{
         var result: Bool = true

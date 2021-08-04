@@ -16,7 +16,7 @@ protocol QueryModelProtocol{
 //class JsonModel:NSObject{
 class QueryModel{
     var delegate: QueryModelProtocol!
-    let urlPath = "http://172.30.1.28:8080/ios/student_query_ios.jsp"
+    let urlPath = "http://192.168.2.9:8080/ios/student_query_ios.jsp"
     
     func downloadItems() {
         let url: URL = URL(string: urlPath)!
@@ -45,6 +45,7 @@ class QueryModel{
         let locations = NSMutableArray()
         
         for i in 0..<jsonResult.count{
+            print(jsonResult[i])
             jsonElement = jsonResult[i] as! NSDictionary
             if let scode = jsonElement["code"] as? String,
                let sname = jsonElement["name"] as? String,

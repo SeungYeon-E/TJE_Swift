@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     
     let myLoc = CLLocationManager()
-    let location = [("혜화문", 37.5878892, 127.0037098), ("흥인지문", 37.5711907, 127.00950), ("창의문", 37.5926027, 126.9664771), ("숙정문", 37.5956584, 126.9810576)]
+    
+    let location = [["혜화문", 37.5878892, 127.0037098], ["흥인지문", 37.5075118551227, 127.026800853841], ["창의문", 37.5926027, 126.9664771], ["숙정문", 37.5956584, 126.9810576]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,15 +59,16 @@ class ViewController: UIViewController {
     
 
     @IBAction func changePage(_ sender: UIPageControl) {
-        mapMove(location[pageControl.currentPage].1, location[pageControl.currentPage].2, location[pageControl.currentPage].0)
+//        mapMove(location[pageControl.currentPage].1, location[pageControl.currentPage].2, location[pageControl.currentPage].0)
     }
-    
 }
 
 // myLoc = CLLocationManager()가 호출시 자동 실행
 extension ViewController: CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        mapMove(location[pageControl.currentPage].1, location[pageControl.currentPage].2, location[pageControl.currentPage].0)
+        for i in 0..<location.count{
+            mapMove(location[i][1] as! Double, location[i][2] as! Double, location[i][0] as! String)
+        }
         myLoc.stopUpdatingLocation() // 좌표 받기 중지
     }
 }

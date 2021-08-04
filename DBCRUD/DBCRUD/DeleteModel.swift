@@ -8,7 +8,7 @@
 import Foundation
 //class JsonModel:NSObject{
 class DeleteModel{
-    var urlPath = "http://172.30.1.28:8080/ios/studentDelete_ios.jsp"
+    var urlPath = "http://192.168.2.9:8080/ios/studentDelete_ios.jsp"
     
     func deleteItems(code: String) -> Bool{
         var result: Bool = true
